@@ -3,7 +3,7 @@ package ende;
 /**
  *
  */
-class Jugador {
+public class Jugador {
 
 	private int exitos; // número de partidas ganadas
 
