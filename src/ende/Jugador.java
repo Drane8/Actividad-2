@@ -19,23 +19,23 @@ class Jugador {
 		Integer c = (int) (Math.random() * 3);
 		switch (c) {
 			case 0:
-				opcion = ("piedra");
+				opcion = "piedra";
 				break;
 			case 1:
-				opcion = ("papel");
+				opcion = "papel";
 				break;
 			case 2:
-				opcion = ("tijeras");
+				opcion = "tijeras";
 		}
 		return opcion;
 	}
 
-	public void setExitos() {
+	public void sumarExito() {
 		exitos++;
 	}
 
 	public int getExitos() {
-		return (exitos);
+		return exitos;
 	}
 
 }
