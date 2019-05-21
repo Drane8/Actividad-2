@@ -5,6 +5,12 @@ package ende;
  */
 class Jugador {
 
+	private int exitos; // número de partidas ganadas
+
+	public Jugador() {
+		exitos = 0;
+	}
+
 	/**
 	 * Escoge piedra, papel o tijera al azar
 	 */
@@ -24,14 +30,12 @@ class Jugador {
 		return opcion;
 	}
 
-	public void setÉxitos() {
-		éxitos++;
+	public void setExitos() {
+		exitos++;
 	}
 
-	public int getÉxitos() {
-		return (éxitos);
+	public int getExitos() {
+		return (exitos);
 	}
 
-	int éxitos; // número de partidas ganadas
-	int winTotal;
 }
