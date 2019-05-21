@@ -10,8 +10,8 @@ public class Juego {
 		Jugador jugador1 = new Jugador();
 		Jugador jugador2 = new Jugador();
 		boolean finDeJuego = false;
-		Integer rondasJugadas = 0; // Número de rondas jugadas
-		Integer empates = 0;
+		int rondasJugadas = 0; // Número de rondas jugadas
+		int empates = 0;
 		String opcionJugador1;
 		String opcionJugador2;
 
@@ -19,10 +19,10 @@ public class Juego {
 		do {
 			System.out.println("***** Ronda: " + rondasJugadas + " *********************\n");
 			System.out.println("Numero de empates: " + empates + "\n");
-			opcionJugador1 = jugador1.opcion_al_azar();
+			opcionJugador1 = jugador1.opcionAlAzar();
 			System.out.println("Jugador 1: " + opcionJugador1 + "\t Jugador 1 - Partidas ganadas: "
 			        + jugador1.getExitos());
-			opcionJugador2 = jugador2.opcion_al_azar();
+			opcionJugador2 = jugador2.opcionAlAzar();
 			System.out.println("Jugador 2: " + opcionJugador2 + "\t Jugador 2 - Partidas ganadas: "
 			        + jugador2.getExitos());
 
