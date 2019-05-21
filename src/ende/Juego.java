@@ -4,9 +4,11 @@ package ende;
  * Simula el juego de Piedra, Papel o tijera
  */
 public class Juego {
+	private static final int PARTIDAS_GANAR = 3;
+
 	public static void main(String args[]) {
-		Jugador p1 = new Jugador();
-		Jugador p2 = new Jugador();
+		Jugador jugador1 = new Jugador();
+		Jugador jugador2 = new Jugador();
 		boolean finDeJuego = false;
 		Integer rondasJugadas = 0; // Número de rondas jugadas
 		Integer empates = 0;
@@ -17,43 +19,51 @@ public class Juego {
 		do {
 			System.out.println("***** Ronda: " + rondasJugadas + " *********************\n");
 			System.out.println("Numero de empates: " + empates + "\n");
-			opcionJugador1 = p1.opcion_al_azar();
+			opcionJugador1 = jugador1.opcion_al_azar();
 			System.out.println("Jugador 1: " + opcionJugador1 + "\t Jugador 1 - Partidas ganadas: "
-			        + p1.getExitos());
-			opcionJugador2 = p2.opcion_al_azar();
+			        + jugador1.getExitos());
+			opcionJugador2 = jugador2.opcion_al_azar();
 			System.out.println("Jugador 2: " + opcionJugador2 + "\t Jugador 2 - Partidas ganadas: "
-			        + p2.getExitos());
+			        + jugador2.getExitos());
 
 			if ((opcionJugador1.equals("piedra")) && (opcionJugador2.equals("papel"))) {
-				System.out.println("Jugador 2 GANA");
-				p2.sumarExito();
-
+				ganaJugador2(jugador2);
 			} else if ((opcionJugador1.equals("papel")) && (opcionJugador2.equals("piedra"))) {
-				p1.sumarExito();
-				System.out.println("Jugador 1 GANA");
+				ganaJugador1(jugador1);
 			} else if ((opcionJugador1.equals("piedra")) && (opcionJugador2.equals("tijeras"))) {
-				p1.sumarExito();
-				System.out.println("Jugador 1 GANA");
+				ganaJugador1(jugador1);
 			} else if ((opcionJugador1.equals("tijeras")) && (opcionJugador2.equals("piedra"))) {
-				p2.sumarExito();
-				System.out.println("Jugador 2 GANA");
+				ganaJugador2(jugador2);
 			} else if ((opcionJugador1.equals("tijeras")) && (opcionJugador2.equals("papel"))) {
-				p1.sumarExito();
-				System.out.println("Jugador 1 GANA");
+				ganaJugador1(jugador1);
 			} else if ((opcionJugador1.equals("papel")) && (opcionJugador2.equals("tijeras"))) {
-				p2.sumarExito();
-				System.out.println("Jugador 2 GANA");
+				ganaJugador2(jugador2);
 			}
+
 			if (opcionJugador1 == opcionJugador2) {
 				empates++;
 				System.out.println("\n\t\t\t Empate \n");
 			}
+
 			rondasJugadas++;
-			if ((p1.getExitos() >= 3) || (p2.getExitos() >= 3)) {
+
+			if ((jugador1.getExitos() >= PARTIDAS_GANAR)
+			        || (jugador2.getExitos() >= PARTIDAS_GANAR)) {
 				finDeJuego = true;
 				System.out.println("FIN DEL JUEGO!!");
 			}
+
 			System.out.println();
 		} while (finDeJuego != true);
+	}
+
+	private static void ganaJugador1(Jugador jugador) {
+		jugador.sumarExito();
+		System.out.println("Jugador 1 GANA");
+	}
+
+	private static void ganaJugador2(Jugador jugador) {
+		jugador.sumarExito();
+		System.out.println("Jugador 2 GANA");
 	}
 }
