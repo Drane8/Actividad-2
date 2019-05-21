@@ -4,6 +4,9 @@ package ende;
  * Simula el juego de Piedra, Papel o tijera
  */
 public class Juego {
+	private static final String TIJERAS = "tijeras";
+	private static final String PAPEL = "papel";
+	private static final String PIEDRA = "piedra";
 	private static final int PARTIDAS_GANAR = 3;
 
 	public static void main(String args[]) {
@@ -26,17 +29,17 @@ public class Juego {
 			System.out.println("Jugador 2: " + opcionJugador2 + "\t Jugador 2 - Partidas ganadas: "
 			        + jugador2.getExitos());
 
-			if ((opcionJugador1.equals("piedra")) && (opcionJugador2.equals("papel"))) {
+			if ((opcionJugador1.equals(PIEDRA)) && (opcionJugador2.equals(PAPEL))) {
 				ganaJugador2(jugador2);
-			} else if ((opcionJugador1.equals("papel")) && (opcionJugador2.equals("piedra"))) {
+			} else if ((opcionJugador1.equals(PAPEL)) && (opcionJugador2.equals(PIEDRA))) {
 				ganaJugador1(jugador1);
-			} else if ((opcionJugador1.equals("piedra")) && (opcionJugador2.equals("tijeras"))) {
+			} else if ((opcionJugador1.equals(PIEDRA)) && (opcionJugador2.equals(TIJERAS))) {
 				ganaJugador1(jugador1);
-			} else if ((opcionJugador1.equals("tijeras")) && (opcionJugador2.equals("piedra"))) {
+			} else if ((opcionJugador1.equals(TIJERAS)) && (opcionJugador2.equals(PIEDRA))) {
 				ganaJugador2(jugador2);
-			} else if ((opcionJugador1.equals("tijeras")) && (opcionJugador2.equals("papel"))) {
+			} else if ((opcionJugador1.equals(TIJERAS)) && (opcionJugador2.equals(PAPEL))) {
 				ganaJugador1(jugador1);
-			} else if ((opcionJugador1.equals("papel")) && (opcionJugador2.equals("tijeras"))) {
+			} else if ((opcionJugador1.equals(PAPEL)) && (opcionJugador2.equals(TIJERAS))) {
 				ganaJugador2(jugador2);
 			}
 
