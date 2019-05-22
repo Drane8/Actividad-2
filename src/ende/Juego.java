@@ -29,21 +29,21 @@ public class Juego {
 			System.out.println("Jugador 2: " + opcionJugador2 + "\t Jugador 2 - Partidas ganadas: "
 			        + jugador2.getExitos());
 
-			if ((opcionJugador1.equals(PIEDRA)) && (opcionJugador2.equals(PAPEL))) {
+			if (opcionJugador1.equals(PIEDRA) && opcionJugador2.equals(PAPEL)) {
 				ganaJugador2(jugador2);
-			} else if ((opcionJugador1.equals(PAPEL)) && (opcionJugador2.equals(PIEDRA))) {
+			} else if (opcionJugador1.equals(PAPEL) && opcionJugador2.equals(PIEDRA)) {
 				ganaJugador1(jugador1);
-			} else if ((opcionJugador1.equals(PIEDRA)) && (opcionJugador2.equals(TIJERAS))) {
+			} else if (opcionJugador1.equals(PIEDRA) && opcionJugador2.equals(TIJERAS)) {
 				ganaJugador1(jugador1);
-			} else if ((opcionJugador1.equals(TIJERAS)) && (opcionJugador2.equals(PIEDRA))) {
+			} else if (opcionJugador1.equals(TIJERAS) && opcionJugador2.equals(PIEDRA)) {
 				ganaJugador2(jugador2);
-			} else if ((opcionJugador1.equals(TIJERAS)) && (opcionJugador2.equals(PAPEL))) {
+			} else if (opcionJugador1.equals(TIJERAS) && opcionJugador2.equals(PAPEL)) {
 				ganaJugador1(jugador1);
-			} else if ((opcionJugador1.equals(PAPEL)) && (opcionJugador2.equals(TIJERAS))) {
+			} else if (opcionJugador1.equals(PAPEL) && opcionJugador2.equals(TIJERAS)) {
 				ganaJugador2(jugador2);
 			}
 
-			if (opcionJugador1 == opcionJugador2) {
+			if (opcionJugador1.equals(opcionJugador2)) {
 				empates++;
 				System.out.println("\n\t\t\t Empate \n");
 			}
